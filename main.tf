@@ -23,7 +23,8 @@ resource "aws_s3_bucket" "remote_state_backend" {
 module "remote_state_backend_bucket_policy" {
   bucket_arn    = "${aws_s3_bucket.remote_state_backend.arn}"
   kms_key_arns  = ["${aws_kms_key.remote_state_backend.arn}"]
-  source        = "github.com/QuiNovas/terraform-modules//aws/secure-bucket-policy?ref=v1.0.13"
+  source        = "QuiNovas/secure-bucket-policy/aws"
+  version       = "1.0.16"
 }
 
 resource "aws_s3_bucket_policy" "remote_state_backend" {
