@@ -12,9 +12,3 @@ variable "user_names" {
   description = "Names of users allowed to access remote state"
   type        = list(string)
 }
-
-variable "user_name_count" {
-  description = "Number of user names"
-  type        = number
-}
-
