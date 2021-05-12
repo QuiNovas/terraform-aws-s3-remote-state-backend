@@ -24,7 +24,7 @@ module "remote_state_backend_bucket_policy" {
   bucket_arn   = aws_s3_bucket.remote_state_backend.arn
   kms_key_arns = [aws_kms_key.remote_state_backend.arn]
   source       = "QuiNovas/secure-bucket-policy/aws"
-  version      = "3.0.0"
+  version      = "3.0.1"
 }
 
 resource "aws_s3_bucket_policy" "remote_state_backend" {
