@@ -32,3 +32,10 @@ resource "aws_s3_bucket_policy" "remote_state_backend" {
   policy = module.remote_state_backend_bucket_policy.json
 }
 
+resource "aws_s3_bucket_public_access_block" "remote_state_backend" {
+  bucket                  = aws_s3_bucket.remote_state_backend.id
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
